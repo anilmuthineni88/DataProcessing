@@ -12,6 +12,7 @@ def process_json(json_file, output_file):
     print('Json normalization completed')
     # Transform the data keeping payload_id as primary key and each field denoting event time
     df = df.groupby('Payload_ID', as_index=False).first()
+    df = df.drop(['Type'], axis=1)
     print('Data transformation completed')
     # Load the data to a CSV which can be ingested into most modern databases
     df.to_csv(output_file, index=False)
