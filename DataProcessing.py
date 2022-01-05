@@ -18,4 +18,5 @@ def process_json(json_file, output_file):
     return 'Data processing completed and output file: {} has been generated'.format(output_file)
 
 
+# Pass input file path and output file path
 process_json('SampleJson/event-sample.json', 'Output/event_data.csv')
